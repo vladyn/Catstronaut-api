@@ -1,8 +1,6 @@
 const axios = require("axios").default;
 
 class RandomKitty {
-  result = {};
-
   constructor(options) {
     this._options = options;
   }
@@ -14,14 +12,6 @@ class RandomKitty {
     } catch (error) {
       return error;
     }
-  }
-
-  miaow() {
-    this.miaow();
-  }
-
-  _miaow() {
-    console.log('MIAOW!');
   }
 }
 
