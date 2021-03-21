@@ -10,8 +10,7 @@ const mock = {
     name: () => 'The Lazy Gonzo',
     age: 7,
     photo: async () => {
-      const photo = await RandomKitty.getPhoto();
-      return photo[0]['url']
+      return await RandomKitty.getPhoto();
     },
     missions: () => ([{
       id: 12,
