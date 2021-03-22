@@ -8,24 +8,27 @@ const typeDefs = gql`
         description: String!
     }
     type GetCat {
-        entry_id: ID!
-        title: String!
+        entry_id: Int
+        title: String
         photo: String
-        description: String!
+        description: String
     }
     type GetPhoto {
-        photo: String!
+        photo: String
     }
     type GetCatById {
-        id: Int
+        entry_id: Int
+        title: String
+        photo: String
+        description: String
     }
     "And the Query type"
     type Query {
         " Get list of tracks on the home page. Not Null!"
         spaceCats: [SpaceCat]
-        getCat(cat: String): GetCat
+        getCat(name: String): GetCat
         getPhoto(cat: String): GetPhoto
-        getCatById: [GetCatById]
+        getCatById(id: Int): GetCatById
     }
 `;
 
