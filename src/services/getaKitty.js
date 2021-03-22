@@ -12,7 +12,7 @@ class GetAKitty {
   async getPhoto(cat) {
     try {
       let response = await axios.request({ ...this._options, url: `${this._baseURL}/entry_photo/${cat}`});
-      return response.data;
+      return response.data[0];
     } catch (error) {
       return error;
     }
@@ -21,7 +21,7 @@ class GetAKitty {
   async getCat(cat) {
     try {
       let response = await axios.request({ ...this._options, url: `${this._baseURL}/entry/${cat}`});
-      return response.data;
+      return response.data[0];
     } catch (error) {
       return error;
     }
@@ -54,8 +54,7 @@ const options = {
   method: 'GET',
   url: 'http://technologytalents.io/space-cats/index.php/api', // baseURL
   headers: {
-    'Content-Type': 'application/json',
-    'x-api-key': '8401ee9d-28ec-4ba4-92a8-690b673f375f'
+    'Content-Type': 'application/json'
   }
 };
 
