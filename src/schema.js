@@ -6,12 +6,14 @@ const typeDefs = gql`
         title: String!
         photo: String
         description: String!
+        missions: [Mission]
     }
     type GetCat {
         entry_id: Int
         title: String
         photo: String
         description: String
+        missions: [Mission]
     }
     type GetPhoto {
         photo: String
@@ -20,6 +22,11 @@ const typeDefs = gql`
         entry_id: Int
         title: String
         photo: String
+        description: String
+    }
+    type Mission {
+        row_id: Int
+        name: String
         description: String
     }
     "And the Query type"
