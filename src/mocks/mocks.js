@@ -1,5 +1,5 @@
 const { MockList } = require('apollo-server');
-const RandomKitty = require('./randomKitty');
+const RandomKitty = require('../services/randomKitty');
 
 const mock = {
   Query: () => ({

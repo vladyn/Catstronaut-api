@@ -17,7 +17,7 @@ class RandomKitty {
 
 const options = {
   method: 'GET',
-  url: 'http://technologytalents.io/space-cats/index.php/api/entry_photo/sirma',
+  url: 'https://api.thecatapi.com/v1/images/search?size=full',
   headers: {
     'Content-Type': 'application/json',
     'x-api-key': '8401ee9d-28ec-4ba4-92a8-690b673f375f'
