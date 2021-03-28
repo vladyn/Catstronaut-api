@@ -29,6 +29,14 @@ const typeDefs = gql`
         name: String
         description: String
     }
+    """
+    Get a page by name
+    """
+    type Page {
+        "TODO: Chage this to have a body with a MarkDown format"
+        title: String
+        description: String
+    }
     "And the Query type"
     type Query {
         " Get list of tracks on the home page. Not Null!"
@@ -36,6 +44,7 @@ const typeDefs = gql`
         getCat(name: String): GetCat
         getPhoto(cat: String): GetPhoto
         getCatById(id: Int): GetCatById
+        getPage(page: String): Page
     }
 `;
 
