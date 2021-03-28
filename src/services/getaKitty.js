@@ -1,6 +1,6 @@
 const axios = require("axios").default;
 
-class GetAKitty {
+class GetAKittyService {
   cats = [];
   _baseURL = '';
 
@@ -58,4 +58,4 @@ const options = {
   }
 };
 
-module.exports = instance = new GetAKitty(options);
+module.exports = instance = new GetAKittyService(options);
