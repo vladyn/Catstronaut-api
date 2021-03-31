@@ -3,26 +3,48 @@ const { gql } = require('apollo-server');
 const typeDefs = gql`
     type SpaceCat {
         entry_id: ID!
+        channel_id: Int
+        author_id: Int
         title: String!
+        url_title: String!
         photo: String
         description: String!
         missions: [Mission]
+        status: String
+        entry_date: Float
+        edit_date: Float,
+        expiration_date: Float
     }
     type GetCat {
         entry_id: Int
-        title: String
+        channel_id: Int
+        author_id: Int
+        title: String!
+        url_title: String!
         photo: String
         description: String
         missions: [Mission]
+        status: String
+        entry_date: Float
+        edit_date: Float,
+        expiration_date: Float
     }
     type GetPhoto {
         photo: String
     }
     type GetCatById {
         entry_id: Int
-        title: String
+        channel_id: Int
+        author_id: Int
+        title: String!
+        url_title: String!
         photo: String
         description: String
+        missions: [Mission]
+        status: String
+        entry_date: Float
+        edit_date: Float,
+        expiration_date: Float
     }
     type Mission {
         row_id: Int
