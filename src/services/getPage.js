@@ -1,8 +1,6 @@
 const axios = require("axios").default;
 
 class GetPageService {
-  _baseUrl = '';
-
   constructor(options) {
     this._options = options;
     this._baseUrl = this._options.url; // Base Url

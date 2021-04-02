@@ -1,12 +1,10 @@
 const axios = require("axios").default;
 
 class GetAKittyService {
-  cats = [];
-  _baseURL = '';
-
   constructor(options) {
     this._options = options;
     this._baseURL = options.url;
+    this.cats = [];
   }
 
   async getPhoto(cat) {
