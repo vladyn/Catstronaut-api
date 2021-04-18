@@ -55,9 +55,12 @@ const typeDefs = gql`
     Get a page by name
     """
     type Page {
-        "TODO: Chage this to have a body with a MarkDown format"
         title: String
-        description: String
+        heading_one: String
+        heading_two: String
+        page_content_left_column: String
+        page_content_right_column: String
+        page_content_row: String
     }
     "And the Query type"
     type Query {
