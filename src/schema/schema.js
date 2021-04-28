@@ -9,6 +9,8 @@ const typeDefs = gql`
         url_title: String!
         photo: String
         description: String!
+        work_location: String
+        seniority: String
         missions: [Mission]
         status: String
         entry_date: Float
@@ -23,6 +25,8 @@ const typeDefs = gql`
         url_title: String!
         photo: String
         description: String
+        work_location: String
+        seniority: String
         missions: [Mission]
         status: String
         entry_date: Float
@@ -40,6 +44,8 @@ const typeDefs = gql`
         url_title: String!
         photo: String
         description: String
+        work_location: String
+        seniority: String
         missions: [Mission]
         status: String
         entry_date: Float
