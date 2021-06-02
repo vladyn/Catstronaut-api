@@ -57,6 +57,30 @@ const typeDefs = gql`
         name: String
         description: String
     }
+    type AuthUser {
+        session_id: String
+        member_id: String
+        username: String
+        screen_name: String
+    }
+    """
+    Get all channel entries from channel ID 1
+    """
+    type Entry {
+        title: String
+        url_title: String
+        seniority: String
+        work_location: String
+        missions: [Mission]
+        description: String
+        photo: String
+    }
+    """
+    Post an entry to a channel
+    """
+    type postEntry {
+        entry_id: String
+    }
     """
     Get a page by name
     """
@@ -76,6 +100,9 @@ const typeDefs = gql`
         getPhoto(cat: String): GetPhoto
         getCatById(id: Int): GetCatById
         getPage(page: String): Page
+        authenticate: AuthUser
+        getEntries: [Entry]
+        postEntry(entry: String): postEntry 
     }
 `;
 
