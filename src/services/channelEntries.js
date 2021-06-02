@@ -20,13 +20,17 @@ class ChannelEntries {
     return response.data
   }
 
-  async postEntry (entry = { url_title: 'Blas', title: 'Dooom', description: 'blias!!!' }) {
+  async postEntry (entry = { url_title: 'Blas', title: 'Dooom' }) {
     const auth = await authenticate.auth()
 
     const patch = {
-      ...options,
-      url: `${this._options.url}/create_channel_entry?channel_id=1&url_title=${entry.url_title}&title=${entry.title}&entry_date=12345678&description=${entry.description}&
-session_id=${auth.session_id}`
+      ...this._options,
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/x-www-form-urlencoded'
+      },
+      url: `${this._options.url}/create_channel_entry?channel_id=1&url_title=${entry.url_title}&title=${entry.title}&entry_date=12345678&session_id=${auth.session_id}`
     }
 
     const response = await axios(patch)
