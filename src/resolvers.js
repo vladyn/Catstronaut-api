@@ -8,7 +8,9 @@ module.exports = {
     getCatById: async (_, { id }) => await getAKittyService.getCatByID(id),
     getPage: async (_, { page }) => await getPageService.getPage(page),
     authenticate: async () => await authenticateService.auth(),
-    getEntries: async () => await channelEntriesService.getEntries(),
-    postEntry: async (_, { entry }) => await channelEntriesService.postEntry(entry)
+    getEntries: async (_, { input }) => await channelEntriesService.getEntries(input),
+  },
+  Mutation: {
+    createEntry: async (_, { input }) => await channelEntriesService.postEntry(input)
   }
 }

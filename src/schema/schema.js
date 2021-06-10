@@ -75,11 +75,30 @@ const typeDefs = gql`
         description: String
         photo: String
     }
+    "Entry of type Form entry"
+    type FormEntry {
+        entry_id: Int
+    }
     """
     Post an entry to a channel
     """
     type postEntry {
-        entry_id: String
+        channel_id: Int
+        title: String!
+        url_title: String!
+        entry_date: Int
+    }
+    type postEntrySuccess {
+        entry_id: Int
+    }
+    """
+    Post an entry to a channel
+    """
+    input entryIntput {
+        url_title: String
+        title: String
+        channel_id: Int
+        entry_date: String
     }
     """
     Get a page by name
@@ -92,6 +111,11 @@ const typeDefs = gql`
         page_content_right_column: String
         page_content_row: String
     }
+    "Add a Channel input"
+    input channelInput {
+        id: Int!
+        status: String
+    }
     "And the Query type"
     type Query {
         " Get list of tracks on the home page. Not Null!"
@@ -101,8 +125,10 @@ const typeDefs = gql`
         getCatById(id: Int): GetCatById
         getPage(page: String): Page
         authenticate: AuthUser
-        getEntries: [Entry]
-        postEntry(entry: String): postEntry 
+        getEntries(input: channelInput): [FormEntry]
+    }
+    type Mutation {
+        createEntry(input: entryIntput): postEntrySuccess
     }
 `;
 
