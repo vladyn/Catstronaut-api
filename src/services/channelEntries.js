@@ -24,11 +24,11 @@ class ChannelEntries {
     return response.data
   }
 
-  async getLastEntry() {
+  async getNextEntry() {
     const formEntries = await this.getEntries({ id: 3 });
-    const lastElementId = [...formEntries].shift()?.entry_id;
+    const lastElementId = [...await formEntries];
 
-    return Number(lastElementId) + 1;
+    return Number(lastElementId.shift()?.entry_id ?? 1) + 1;
   }
 
   async postEntry(entry = {
@@ -38,7 +38,7 @@ class ChannelEntries {
     channel_id: 3
   }) {
     const auth = await authenticate.auth()
-    const nextEntry = await this.getLastEntry();
+    const nextEntry = await this.getNextEntry();
 
     const patch = {
       method: 'POST',
