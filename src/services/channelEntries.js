@@ -26,8 +26,9 @@ class ChannelEntries {
 
   async getLastEntry() {
     const formEntries = await this.getEntries({ id: 3 });
+    const lastElementId = [...formEntries].shift()?.entry_id;
 
-    return formEntries.pop()?.entry_id;
+    return Number(lastElementId) + 1;
   }
 
   async postEntry(entry = {
@@ -37,7 +38,8 @@ class ChannelEntries {
     channel_id: 3
   }) {
     const auth = await authenticate.auth()
-    const lastEntry = await this.getLastEntry();
+    const nextEntry = await this.getLastEntry();
+
     const patch = {
       method: 'POST',
       headers: {
@@ -45,7 +47,7 @@ class ChannelEntries {
         'Content-Type': 'application/x-www-form-urlencoded'
       },
       url: `${this._options.url}/create_channel_entry`,
-      data: `channel_id=${entry.channel_id}&url_title=${entry.url_title}${lastEntry}&title=${entry.title} ${lastEntry}&entry_date=${entry.entry_date}&session_id=${auth.session_id}`
+      data: `channel_id=${entry.channel_id}&url_title=${entry.url_title}${nextEntry}&title=${entry.title} ${nextEntry}&entry_date=${entry.entry_date}&session_id=${auth.session_id}`
     }
 
     const response = await axios(patch);

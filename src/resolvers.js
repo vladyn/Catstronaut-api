@@ -11,6 +11,6 @@ module.exports = {
     getEntries: async (_, { input }) => await channelEntriesService.getEntries(input),
   },
   Mutation: {
-    createEntry: async (_, { input }) => await channelEntriesService.postEntry(input)
+    createEntry: (_, { input }) => channelEntriesService.postEntry(input)
   }
 }
