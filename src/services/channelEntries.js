@@ -47,7 +47,7 @@ class ChannelEntries {
         'Content-Type': 'application/x-www-form-urlencoded'
       },
       url: `${this._options.url}/create_channel_entry`,
-      data: `channel_id=${entry.channel_id}&url_title=${entry.url_title}${nextEntry}&title=${entry.title} ${nextEntry}&entry_date=${entry.entry_date}&session_id=${auth.session_id}`
+      data: `channel_id=${entry.channel_id}&url_title=${entry.url_title}${nextEntry}&title=${entry.title} ${nextEntry}&name=${entry.name}&motivation=${entry.motivation}&job_position=${entry.job_position}&mail=${entry.mail}&entry_date=${entry.entry_date}&session_id=${auth.session_id}`
     }
 
     const response = await axios(patch);

@@ -95,10 +95,14 @@ const typeDefs = gql`
     Post an entry to a channel
     """
     input entryIntput {
-        url_title: String
-        title: String
-        channel_id: Int
-        entry_date: String
+        url_title: String!
+        title: String!
+        channel_id: Int!
+        entry_date: String!
+        name: String!,
+        motivation: String!
+        mail: String!
+        job_position: String
     }
     """
     Get a page by name
