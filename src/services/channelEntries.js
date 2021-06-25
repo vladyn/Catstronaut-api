@@ -28,7 +28,7 @@ class ChannelEntries {
     const formEntries = await this.getEntries({ id: 3 });
     const lastElementId = [...await formEntries];
 
-    return Number(lastElementId.shift()?.entry_id ?? 1) + 1;
+    return Number(lastElementId.shift().entry_id || 1) + 1;
   }
 
   async postEntry(entry = {
