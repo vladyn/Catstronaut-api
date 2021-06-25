@@ -103,6 +103,8 @@ const typeDefs = gql`
         motivation: String!
         mail: String!
         job_position: String
+        terms: String,
+        personal_data: String
     }
     """
     Get a page by name

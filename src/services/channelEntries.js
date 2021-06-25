@@ -32,7 +32,7 @@ class ChannelEntries {
   }
 
   async postEntry(entry = {
-    url_title: 'Application Form Entry-',
+    url_title: 'Application_form_entry-',
     title: 'Application Form Entry #',
     entry_date: Date.now(),
     channel_id: 3
