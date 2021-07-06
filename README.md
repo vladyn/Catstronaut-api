@@ -7,12 +7,25 @@ It:
  - Provides it to a front-en application
 
  It's a based on GraphQL tutorial from [Odyssey Lift off course, Part 1](https://odyssey.apollographql.com/lift-off-part1).
- 
+
+
+## Authenticate
+Create a file in the root folder of the middleware project called config.js with your credentials like
+```
+module.exports = credentials = {
+    username: yourData,
+    password: yourData
+}
+```
+
+## Deployment
+Deploy is thought sftp on the client host. Ask for permissions the author.
+
  # Run
 To get started run the following command.
 
 ```
-npm install && npm start
+yarn install && yarn start
 ```
 
 Once everything is bootstraped navigate to `http://localhost:4000` in your browser.
